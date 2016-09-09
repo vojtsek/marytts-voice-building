@@ -1,0 +1,8 @@
+echo "Mary root:"
+read MARY_ROOT
+echo "root of voice bulding"
+read ROOT_VOICE_BUILDING
+echo "locale"
+read LOCALE
+
+cat db.draft | sed "s@MARY_ROOT@$MARY_ROOT@;s@ROOT_VOICE_BUILDING@$ROOT_VOICE_BUILDING@;s@LOCALE@$LOCALE@;" > db.config
