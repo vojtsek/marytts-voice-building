@@ -31,13 +31,13 @@ PhoneUnitFeatureComputer: mary/features.txt
 PhonelabelFeatureAligner: phonelab/ phonefeatures/
     $(VOICE_TOOLS) marytts.tools.voiceimport.PhonelabelFeatureAligner
 
-HMMVoiceDataPreparation: phonefeatures/ phonelab/ mary/features.txt $(MARY_BASE)/lib/external/externalBinaries.config
+HMMVoiceDataPreparation: phonefeatures/ phonelab/ $(ROOT_DIR)/mary/features.txt $(MARY_BASE)/lib/external/externalBinaries.config
     $(VOICE_TOOLS) marytts.tools.voiceimport.HMMVoiceDataPreparation
 
-HMMVoiceFeatureSelection: mary/features.txt
+HMMVoiceFeatureSelection: $(ROOT_DIR)/mary/features.txt
     $(VOICE_TOOLS) marytts.tools.voiceimport.HMMVoiceFeatureSelection
 
-HMMVoiceMakeData: hmmFeatures.txt $(ROOT_DIR)/hts/data/
+HMMVoiceMakeData: $(ROOT_DIR)/mary/hmmFeatures.txt $(ROOT_DIR)/hts/data/
     cd $(ROOT_DIR)/hts/data/
 
 HMMVoiceMakeVoice: $(ROOT_DIR)/hts/data/
